@@ -6,11 +6,12 @@ jQuery(document).ready(function($) {
 		.get(0)
 		.getContext('2d');
 
-	// makeAjaxRequest(URL, function(json) {
-	// 	var data = generateDataSet(getHours(json), getFahrenheits(json));
-	// 	var tempChart = new Chart(ctx).Line(data, { bezierCurve: true });
-	// });
 	makeAjaxRequest(URL, function(json) {
-		console.log(json);
+		var data = generateDataSet(getHours(json), getFahrenheits(json));
+		var tempChart = new Chart(ctx).Line(data, { bezierCurve: true });
 	});
+	// makeAjaxRequest(URL, function(json) {
+	// 	debugger;
+	// 	console.log(json);
+	// });
 });
